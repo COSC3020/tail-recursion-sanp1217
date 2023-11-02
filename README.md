@@ -15,3 +15,20 @@ implementation. What changes between iterations of the loop?
 Is the asymptotic complexity of tail-recursive Fibonacci different from the
 non-tail-recursive version? Why, or why not? Add your answer, including your
 reasoning, to this markdown file.
+
+The asymptotic complexity of tail-recursive Fibonacci is not different from the non-tail-recursive version. Specifically with this non-tail-recursive version:
+```
+function fib_dp(n) {
+    var fib_old = 1;
+    var fib = 1;
+    var fib_new;
+    while(n > 2) {
+      fib_new = fib + fib_old;
+      fib_old = fib;
+      fib = fib_new;
+      --n;
+    }
+    return fib;
+}
+```
+there is no difference, asymptotically they both run n times. 
